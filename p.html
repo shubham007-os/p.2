@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Will You Be My Valentine? 💖</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            width: 300px;
+        }
+
+        h1 {
+            color: #ff4d6d;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #no {
+            background-color: #ccc;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Will you be my Valentine? 💕</h1>
+    <p>You make my world brighter every day ✨</p>
+
+    <div class="buttons">
+        <button id="yes" onclick="yesClick()">Yes 💖</button>
+        <button id="no" onmouseover="moveNo()">No 🙈</button>
+    </div>
+</div>
+
+<script>
+    function yesClick() {
+        document.body.innerHTML = `
+            <div style="
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+                background: linear-gradient(135deg, #ff758c, #ff7eb3);
+                font-family: Arial, sans-serif;
+                color:white;
+                text-align:center;
+            ">
+                <div>
+                    <h1>Yayyyy!!! 😍💖</h1>
+                    <p style="font-size:20px;">I knew you'd say YES 💕</p>
+                    <p>You just made me the happiest person 💫</p>
+                </div>
+            </div>
+        `;
+    }
+
+    function moveNo() {
+        const button = document.getElementById("no");
+        const x = Math.random() * 200 - 100;
+        const y = Math.random() * 200 - 100;
+        button.style.transform = `translate(${x}px, ${y}px)`;
+    }
+</script>
+
+</body>
+</html>
